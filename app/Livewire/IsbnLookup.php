@@ -48,7 +48,6 @@ class IsbnLookup extends Component
             }
         } catch (\Throwable $e) {
             //error handling for any throws from the service. Highlighted the ratelimit as it happens a lot.
-            dd($e);
             if($e->getCode() === 429){
                 $this->error = 'Rate limit exceeded. Please try again later.';
             } else {
